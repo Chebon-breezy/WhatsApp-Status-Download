@@ -22,6 +22,7 @@ android {
         it.buildConfigField 'String', 'url', url
         it.buildConfigField 'String', 'url_second', url_second
         it.buildConfigField 'String', 'downloadUrl', downloadUrl
+        it.buildConfigField 'String','absolute_url',AbsoluteUrl
     }
 
     compileOptions {
