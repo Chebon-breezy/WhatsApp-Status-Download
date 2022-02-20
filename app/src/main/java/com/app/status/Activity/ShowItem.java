@@ -83,13 +83,13 @@ public class ShowItem extends AppCompatActivity {
         imageView_two = findViewById(R.id.imageView_line_two_imageShow);
         imageView_three = findViewById(R.id.imageView_line_three_imageShow);
         linearLayoutDownload = findViewById(R.id.linearLayout_download_imageShow);
-        linearLayout_setAsWallpaper = findViewById(R.id.linearLayout_set_as_wallpaper_imageShow);
-        linearLayout_profile = findViewById(R.id.linearLayout_profile_imageShow);
+        //linearLayout_setAsWallpaper = findViewById(R.id.linearLayout_set_as_wallpaper_imageShow);
+        //linearLayout_profile = findViewById(R.id.linearLayout_profile_imageShow);
         linearLayout_delete = findViewById(R.id.linearLayout_delete_imageShow);
         linearLayout_share = findViewById(R.id.linearLayout_share_imageShow);
         imageView_download = findViewById(R.id.imageView_download_imageShow);
-        imageView_setWallpaper = findViewById(R.id.imageView_set_as_wallpaper_imageShow);
-        imageView_profile = findViewById(R.id.imageView_other_imageShow);
+        //imageView_setWallpaper = findViewById(R.id.imageView_set_as_wallpaper_imageShow);
+        //imageView_profile = findViewById(R.id.imageView_other_imageShow);
         imageView_delete = findViewById(R.id.imageView_delete_imageShow);
         imageView_share = findViewById(R.id.imageView_share_imageShow);
         linearLayout_delete.setVisibility(View.GONE);

@@ -80,34 +80,6 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/line" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout_set_as_wallpaper_imageShow"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
-
-            <ImageView
-                android:id="@+id/imageView_set_as_wallpaper_imageShow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/wallpaper" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/set_as_wallpaper"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-        </LinearLayout>
-
         <ImageView
             android:id="@+id/imageView_line_two_imageShow"
             android:layout_width="1dp"
@@ -115,33 +87,7 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/line" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout_profile_imageShow"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
 
-            <ImageView
-                android:id="@+id/imageView_other_imageShow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/user" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/profile"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView_line_three_imageShow"

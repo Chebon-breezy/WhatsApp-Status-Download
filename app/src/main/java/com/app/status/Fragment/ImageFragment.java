@@ -3,6 +3,7 @@ package com.app.status.Fragment;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Queue;
 
 public class ImageFragment extends Fragment {
@@ -93,33 +95,71 @@ public class ImageFragment extends Fragment {
         protected String doInBackground(String... strings) {
 
             try {
-                switch (method.url_type()) {
-                    case "w": {
-                        root = Environment.getExternalStorageDirectory() + BuildConfig.url;
-                        File file = new File(root);
-                        Constant.imageArray.clear();
-                        Constant.imageArray = getListFiles(file);
-                        break;
+
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
+                {
+                    switch (method.url_type()) {
+                        case "w": {
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.absolute_url;
+                            File file = new File(root);
+                            Constant.imageArray.clear();
+                            Constant.imageArray = getListFiles(file);
+                            break;
+                        }
+                        case "wb": {
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.url_second;
+                            File file = new File(root);
+                            Constant.imageArray.clear();
+                            Constant.imageArray = getListFiles(file);
+                            break;
+                        }
+                        case "wball": {
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.absolute_url;
+                            File file = new File(root);
+                            Constant.imageArray.clear();
+                            Constant.imageArray = getListFiles(file);
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.url_second;
+                            File file_second = new File(root);
+                            Constant.imageArray.addAll(getListFiles(file_second));
+                            break;
+                        }
                     }
-                    case "wb": {
-                        root = Environment.getExternalStorageDirectory() + BuildConfig.url_second;
-                        File file = new File(root);
-                        Constant.imageArray.clear();
-                        Constant.imageArray = getListFiles(file);
-                        break;
-                    }
-                    case "wball": {
-                        root = Environment.getExternalStorageDirectory() + BuildConfig.url;
-                        File file = new File(root);
-                        Constant.imageArray.clear();
-                        Constant.imageArray = getListFiles(file);
-                        root = Environment.getExternalStorageDirectory() + BuildConfig.url_second;
-                        File file_second = new File(root);
-                        Constant.imageArray.addAll(getListFiles(file_second));
-                        break;
-                    }
+
+
                 }
-            } catch (Exception e) {
+                else {
+
+                    switch (method.url_type()) {
+                        case "w": {
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.url;
+                            File file = new File(root);
+                            Constant.imageArray.clear();
+                            Constant.imageArray = getListFiles(file);
+                            break;
+                        }
+                        case "wb": {
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.url_second;
+                            File file = new File(root);
+                            Constant.imageArray.clear();
+                            Constant.imageArray = getListFiles(file);
+                            break;
+                        }
+                        case "wball": {
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.url;
+                            File file = new File(root);
+                            Constant.imageArray.clear();
+                            Constant.imageArray = getListFiles(file);
+                            root = Environment.getExternalStorageDirectory() + BuildConfig.url_second;
+                            File file_second = new File(root);
+                            Constant.imageArray.addAll(getListFiles(file_second));
+                            break;
+                        }
+                    }
+
+                }
+            }
+
+            catch (Exception e) {
                 Log.d("error", e.toString());
             }
 
